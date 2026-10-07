@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, Integer, String
+from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from app.database import Base
 
 
@@ -19,7 +19,7 @@ class Animal(Base):
     nome_animal = Column(String(60),primary_key=False, nullable=True)
     especie = Column(String(40),primary_key=False, nullable=False)
     raca = Column(String(60), primary_key=False,nullable=True)
-    peso_kg = Column(float, primary_key=False, nullable=True)
+    peso_kg = Column(Float, primary_key=False, nullable=True)
     tutor_id = Column(Integer, ForeignKey("tutores.id"), nullable=True)
 
 
@@ -29,5 +29,5 @@ class Atendimento(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     data_atendimento = Column(String(20),primary_key=False, nullable=True)
     motivo = Column(String(200),primary_key=False, nullable=True)
-    valor_consulta = Column(float, primary_key=False,nullable=True)
+    valor_consulta = Column(Float, primary_key=False, nullable=True)
     animal_id = Column(Integer, ForeignKey("animais.id"), nullable=True)

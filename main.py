@@ -9,6 +9,7 @@ from app.crud import (
 
 
 # Criação das tabelas
+Base.metadata.drop_all(bind=engine)
 Base.metadata.create_all(bind=engine)
 
 print("Tabelas criadas com sucesso!")
@@ -42,7 +43,7 @@ try:
         "Thor",
         "cão",
         "Golden Retriever",
-        None,
+        35.5,
         tutor1.id
     )
 
@@ -52,7 +53,7 @@ try:
         "Mia",
         "gato",
         "Siamês",
-        None,
+        4.2,
         tutor1.id
     )
 
@@ -62,7 +63,7 @@ try:
         "Luna",
         "ave",
         "Calopsita",
-        None,
+        0.09,
         tutor2.id
     )
 
@@ -77,7 +78,7 @@ try:
         data_hoje,
         "Vacina anual V8",
         120.00,
-        None
+        animal1.id
     )
 
 
@@ -86,7 +87,7 @@ try:
         data_hoje,
         "Consulta de rotina",
         90.00,
-        None
+        animal2.id
     )
 
 
@@ -95,7 +96,7 @@ try:
         data_hoje,
         "Avaliação geral",
         70.00,
-        None
+        animal3.id
     )
 
 
@@ -142,21 +143,21 @@ try:
         "Atendimento 1:",
         atendimento1.motivo,
         "- R$",
-        atendimento1.valor_cons
+        atendimento1.valor_consulta
     )
 
     print(
         "Atendimento 2:",
         atendimento2.motivo,
         "- R$",
-        atendimento2.valor_cons
+        atendimento2.valor_consulta
     )
 
     print(
         "Atendimento 3:",
         atendimento3.motivo,
         "- R$",
-        atendimento3.valor_cons
+        atendimento3.valor_consulta
     )
 
 
